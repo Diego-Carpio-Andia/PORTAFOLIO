@@ -1,0 +1,743 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PORTAFOLIO</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"> 
+    <link rel="icon" href="icono.ico">
+    <style>
+        @media screen and (max-width: 768px) {
+            /* Estilos para pantallas más pequeñas, como tabletas */
+            .sidebar {
+                width: 100%;
+                height: auto;
+                position: static;
+            }
+            .contenido {
+                width: 100%;
+                margin-left: 0;
+            }
+        }
+
+        body {
+            font-family: 'Hack', monospace;
+            margin: 0;
+            padding: 0;
+            background-color: #251d44; 
+            color: #fff; 
+            display: flex;
+            align-items: center;
+            letter-spacing: 2px;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .sidebar {
+            width: 15%;
+            background-color: #372860;
+            color: #fff; 
+            height: 100vh;
+            position: fixed;
+            top: 0;
+            left: 0;
+            overflow-y: auto;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .sidebar img {
+            display: block;
+            margin: 20px auto; 
+            border-radius: 50%;
+            width: 150px;
+            height: 150px;
+        }
+        .sidebar h2 {
+            text-align: center;
+            font-size: 1.5em;
+            margin-bottom: 10px; 
+            color: #FF5733; 
+        }
+        .sidebar nav {
+            text-align: center;
+            margin-top: 20px; 
+        }
+        .sidebar nav ul {
+            padding: 0;
+            list-style: none; 
+        }
+        .sidebar nav a {
+            color: #fff;
+            text-decoration: none;
+            display: inline-block;
+            margin: 10px 0;
+            font-size: 1.2em;
+            transition: color 0.3s ease-in-out;
+        }
+        .sidebar nav a:hover,
+        .sidebar nav a.active { 
+            color: #34c4bd;
+        }
+        .contenido {
+            margin-left: 15%; 
+            width: 80%; 
+            padding-top: 20px;
+            margin-top: 20px; 
+        }
+        
+        section {
+            text-align: left;
+            background-color: #251d44; 
+            margin-bottom: 40px;
+            height: 200vh;
+        }
+        section h2 {
+            margin-bottom: 20px;
+            font-size: 3em;
+            letter-spacing: 2px; 
+            color: #FF5733;
+        }
+        section p {
+            font-size: 1.1em;
+            margin-bottom: 20px;
+        }
+        
+        .redes-sociales {
+            margin-top: 20px;
+        }
+        .redes-sociales a {
+            color: #fff;
+            text-decoration: none;
+            display: inline-block;
+            margin-right: 10px;
+            font-size: 1.5em;
+            border: 2px solid #34c4bd;
+            border-radius: 5px;
+            padding: 5px 10px;
+            transition: all 0.3s ease-in-out;
+        }
+        .redes-sociales a:hover {
+            background-color: #34c4bd;
+        }
+       
+        .boton-descargar {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #8ce202   ; 
+            color: black; 
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease-in-out;
+            margin-bottom: 20px;
+            
+        }
+        .boton-descargar:hover {
+            background-color: #609c00; 
+        }
+        
+        .icono {
+            margin-right: 10px;
+        }
+        
+        .tecnologia {
+            display: flex;
+            flex-flow: row nowrap;
+            align-items: center;
+            margin-right: 2%;
+            margin-bottom: 10px;
+        }
+        .tecnologia .icono {
+            font-size: 1.5em;
+            margin-right: 10px;
+        }
+        .tecnologia span {
+            font-weight: bold;
+        }
+        
+        .javascript {
+            background-color: #f0db4f; 
+            padding: 5px 10px;
+            color: #000; 
+        }
+        .html {
+            background-color: #e34c26; 
+            padding: 5px 10px;
+            color: #fff;
+        }
+      
+        .css {
+            background-color: #264de4;
+            padding: 5px 10px;
+            color: #fff; 
+        }
+        
+       
+        #contacto h1 {
+            font-size: 3em;
+            color: #FF5733;
+        }
+        .contacto-item {
+            margin-top: 50px;
+            margin-bottom: 60px;
+            display: flex;
+            flex-flow: row nowrap;
+            text-align: center;
+        }
+        .contacto-item p {
+            font-size: 1.1em;
+            padding: 0px;
+            margin: 0px;
+        }
+        .contacto-item .icono {
+            font-size: 1.5em;
+            margin-right: 10px;
+            color: #8ce202; 
+        }
+        .seccion-botones-contacto{
+            display: flex;
+            flex-flow: row nowrap;
+        }
+        .texto-contactame{
+            margin: 0px;
+            margin-bottom: 5px;
+            color: #8ce202;
+        }
+        .bootstrap-icono {
+            background-color: #563d7c; 
+            padding: 5px 10px;
+            color: #fff;
+            text-shadow: 0px 0px 3px solid black;
+        }
+
+        .educacion-container-elementos{
+            margin-top: 70px;
+        }
+
+
+        .button-hover-educacion{
+            background-color: #02fd9f; 
+            border: 10px; 
+            padding-left: 20px; 
+            padding-right: 20px;
+            padding: 10px;
+            letter-spacing: 5px;
+            transition: all 300ms;
+        }
+        .button-hover-educacion:hover{
+            background-color: #008b58;
+            color: white;
+        }
+
+        .skill-modulos{
+            display: flex;
+            flex-flow: column nowrap;
+        }
+
+        .skill-modulos-container{
+            display: flex;
+            flex-flow: row wrap;
+            justify-content: space-between;
+            align-items: start;
+        }
+        
+
+
+        /*PROYECTOS*/
+        .container {
+            width: 80%;
+            margin: 0 auto;
+        }
+        .proyecto {
+            margin-bottom: 50px;
+        }
+        .proyecto img {
+            max-width: 100%;
+            height: auto;
+        }
+        .proyecto h3 {
+            margin-top: 10px;
+            font-size: 1.5em;
+        }
+        .proyecto p {
+            margin-top: 10px;
+            font-size: 1.2em;
+        }
+        .proyecto a {
+            margin-right: 10px;
+            text-decoration: none;
+            color: #e76ff6;
+        }
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgb(0,0,0);
+            background-color: rgba(0,0,0,0.4);
+            padding: 0px;
+            margin: 0px;
+        }
+        .modal-content {
+            background-color: #fefefe;
+            margin: 5% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 70%;
+        }
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        #educacion{
+            margin-bottom: 600px;
+        }
+        
+
+
+    </style>
+</head>
+<body>
+    <div class="sidebar">
+        <img style="object-fit: cover;" src="FOTO.png" alt="Foto de perfil">
+        <nav>
+            <ul>
+                <li><a href="#lucky" class="active">LUCKY</a></li>
+                <li><a href="#sobre-mi">SOBRE MÍ</a></li>
+                <li><a href="#proyectos">PROYECTOS</a></li>
+                <li><a href="#educacion">EDUCACIÓN</a></li>
+                <li><a href="#skills">SKILLS</a></li>
+                <li><a href="#contacto">CONTACTO</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <div class="contenido">
+        <section id="lucky">
+            <div class="container">
+                <div style="justify-content: start; display: flex; flex-flow: row nowrap;">
+                    <h2 style="letter-spacing: 8px; font-size: 4em; color: #e76ff6;">DIEGO </h2>
+                    <div style="width: 40px;"></div>
+                    <h2 style="letter-spacing: 8px; font-size: 4em; color:#8ce202;">CARPIO ANDIA</h2>
+                </div>
+                <div style="color: #34c4bd; font-size: 1.3em;" id="textoEscrito"></div> 
+                <p style="margin-bottom: 80px; font-size: 1.4em;">BIENVENIDO A MI PORTAFOLIO COMO DESARRROLLADOR WEB</p>
+                <p style="font-size: 1.3em;">Si quieres ponerte en contacto conmigo, escríbeme a <a href="mailto:diegobefore99@hotmail.com" style="color: #ff5733;">diegobefore99@hotmail.com</a>.</p>
+                <a style="margin-top: 20px; text-shadow: 2px 2px 4px solid black;" href="https://drive.usercontent.google.com/u/0/uc?id=1KALjHwaLSkb7wu13PToNnKjbxramLoF_&export=download" class="boton-descargar">DESCARGAR MI CV</a>
+                <div class="redes-sociales">
+                    <a href="https://www.linkedin.com/in/diego-moises-carpio-andia-125a0b234/"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://github.com/Diego-Carpio-Andia"><i class="fab fa-github"></i></a>
+                </div>
+            </div>
+        </section>
+
+        <section id="sobre-mi">
+            <div class="container container-sobremi">
+                <h2 style="color: #e76ff6; text-decoration: none; margin-bottom: 20px;">SOBRE MÍ</h2>
+                <p style="font-size: 1.4em; text-align: justify; text-decoration: none; margin-bottom: 60px;">
+                    👋 ¡Hola! Soy Diego Carpio Andia, un estudiante de sistemas en la UPC apasionado por el desarrollo web y la tecnología. A lo largo de mis estudios, he desarrollado habilidades en diversas tecnologías y frameworks que me permiten crear soluciones web robustas y escalables. 🚀 Siempre estoy buscando nuevas oportunidades para aprender y crecer en el mundo del desarrollo de software. Me encanta enfrentar nuevos desafíos y colaborar en proyectos que me permitan aplicar y expandir mis conocimientos.
+                </p>
+                <h2 style="text-align: justify; color: #8ce202; font-size: 1.5em; text-transform: uppercase; text-decoration: none; margin-bottom: 50px;">
+                    Actualmente me desempeño como estudiante y busco constantemente poder ampliar mis conocimientos mediante plataformas como udemy, coursera o platzi. 
+                </h2>
+                <p style="font-size: 1.5em; text-align: justify; text-decoration: none; margin-bottom: 50px;">
+                    Si quieres contactarte conmigo, escríbeme a <a href="mailto:diegobefore99@hotmail.com" style="color: #ff5733;">diegobefore99@hotmail.com</a>.
+                </p>
+                <p style="font-size: 1.5em; text-decoration: none; margin-bottom: 50px;">
+                    Conoce mi  <a href="https://www.linkedin.com/in/diego-moises-carpio-andia-125a0b234/" style="color: #8ce202; text-decoration: none;">LinkedIn aquí</a>.
+                </p>
+            </div>            
+        </section>
+        
+        
+        
+
+        <section id="proyectos">
+    <div class="container">
+        <h2 style="color: #e76ff6;">PROYECTOS</h2>        
+            <div class="proyecto">
+                <h3>PROYECTO GESTION DE INVENTARIO Y VENTAS</h3>
+                <p>Gestion de Inventario y Ventas para pequeñas pymes en el Perú este proyecto utiliza un modelo de machine learning para predecir el stock futuro del inventario esta construido en las tecnologias .NET , REACTJS y python ademas de se utilizo Azure Cloud</p>
+                <a href="javascript:void(0);" onclick="openModal('modal1')"><i class="fas fa-video"></i> Ver Video</a>
+            </div>            
+            <div class="proyecto">
+                <h3>PROYECTO RED SOCIAL</h3>
+                <p>Red Social parecida a instagram usando MONGODB como parte de la base de datos no relacion, NodeJS con el Stack MERN (patron MVC) como backend y como frontend se utilizo REACT</p>
+                <a href="javascript:void(0);" onclick="openModal('modal2')"><i class="fas fa-video"></i> Ver Video</a>
+            </div>            
+            <div class="proyecto">
+                <h3>PROYECTO CASA DE EMPEÑO</h3>
+                <p>Proyecto destinado a una a la gestion de clientes dentro de una casa de empeño y prestamos para el proyecto se utilizo las siguientes tecnologias: el framework de laravel 8, mysql como base de datos, con el patron de diseño MVC.</p>
+                <a href="javascript:void(0);" onclick="openModal('modal3')"><i class="fas fa-video"></i> Ver Video</a>
+            </div>
+        </div>
+    </section>
+
+    <div id="modal1" class="modal">
+        <div class="modal-content">
+        <span class="close" onclick="closeModal('modal1')">&times;</span>
+        <video width="100%" controls>
+            <source src="PROYECTO INVENTARIO.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        </div>
+    </div>
+  
+    <div id="modal2" class="modal">
+        <div class="modal-content">
+        <span class="close" onclick="closeModal('modal2')">&times;</span>
+        <video width="100%"  controls>
+            <source src="RED SOCIAL.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        </div>
+    </div>
+  
+    <div id="modal3" class="modal">
+        <div class="modal-content">
+        <span class="close" onclick="closeModal('modal3')">&times;</span>
+        <video width="100%" controls>
+            <source src="WASICASH.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+        <section id="educacion">
+            <div class="container">              
+                <h2 style="color: #e76ff6;">EDUCACIÓN</h2>
+                <div class="educacion-container">
+                    <div style="margin-top: 50px;" class="educacion-container-elementos">
+                        
+                        <h2 style="text-align: justify; color: #e76ff6; font-size: 2.5em; margin: 0px; padding: 0px;">Master en APIs RESTful con NodeJS: Crea 3 backends completos
+                        </h2>
+                        <h4 style="text-align: justify; color: #799ec8; font-size: 1.6em; margin: 0px; padding: 0px;">Curso completo para la creacion de backends utilizando NodeJS</h4>
+                        
+                        <p style="text-align: justify; color: #799ec8; margin: 0px; padding: 0px; margin-top: 20px; margin-bottom: 10px;">Curso de 18 horas</p>
+                        <button class="button-hover-educacion"><a target="_blank" href="https://www.udemy.com/certificate/UC-d578b49c-0d99-4f06-ab19-cdfb7e7c6066/" style="text-decoration: none;">CERTIFICADO</a></button>
+
+                    </div>
+
+
+                    <div class="educacion-container-elementos">
+                        
+                        <h2 style="text-align: justify; color: #e76ff6; font-size: 2.5em; margin: 0px; padding: 0px;">
+                            Master en React: Aprender ReactJS, Hooks, MERN, NodeJS, JWT+
+                        </h2>
+                        <h4 style="text-align: justify; color: #799ec8; font-size: 1.6em; margin: 0px; padding: 0px;">
+                            Curso completo para la creacion de frotends utilizando REACT
+                        </h4>
+                        
+                        <p style="text-align: justify; color: #799ec8; margin: 0px; padding: 0px; margin-top: 20px; margin-bottom: 10px;">Curso de 40 horas</p>
+                        <button class="button-hover-educacion"><a target="_blank" href="https://www.udemy.com/certificate/UC-d0332554-2805-45cf-bbcb-5b956d1b8f19/" style="text-decoration: none;">CERTIFICADO</a></button>
+
+                    </div>
+
+
+
+                    <div class="educacion-container-elementos">
+                        
+                        <h2 style="text-align: justify; color: #e76ff6; font-size: 2.5em; margin: 0px; padding: 0px;">
+                            Master en JavaScript: Aprender JS, jQuery, Angular, NodeJS
+                        </h2>
+                        <h4 style="text-align: justify; color: #799ec8; font-size: 1.6em; margin: 0px; padding: 0px;">Curso completo de Javascript y el framework de Angular</h4>
+                        
+                        <p style="text-align: justify; color: #799ec8; margin: 0px; padding: 0px; margin-top: 20px; margin-bottom: 10px;">Curso de 33 horas</p>
+                        <button class="button-hover-educacion"><a target="_blank" href="https://www.udemy.com/certificate/UC-62befb5f-4481-4288-8c74-bb17c969bd48/" style="text-decoration: none;">CERTIFICADO</a></button>
+
+                    </div>
+
+
+                    <div class="educacion-container-elementos">
+                        
+                        <h2 style="text-align: justify; color: #e76ff6; font-size: 2.5em; margin: 0px; padding: 0px;">
+                            Master en PHP, SQL, POO, MVC, Laravel, Symfony, WordPress +
+
+                        </h2>
+                        <h4 style="text-align: justify; color: #799ec8; font-size: 1.6em; margin: 0px; padding: 0px;">
+                            Curso completo de PHP utilizando frameworks conocidos
+                        </h4>
+                        
+                        <p style="text-align: justify; color: #799ec8; margin: 0px; padding: 0px; margin-top: 20px; margin-bottom: 10px;">Curso de 56 horas</p>
+                        <button class="button-hover-educacion"><a target="_blank" href="https://www.udemy.com/certificate/UC-28280f85-d546-495d-b869-557b26d5bac9/" style="text-decoration: none;">CERTIFICADO</a></button>
+
+                    </div>
+
+
+                    <div class="educacion-container-elementos">
+                        
+                        <h2 style="text-align: justify; color: #e76ff6; font-size: 2.5em; margin: 0px; padding: 0px;">
+                            Master en TypeScript, JavaScript Moderno, ES2024, APIs HTML5
+
+
+                        </h2>
+                        <h4 style="text-align: justify; color: #799ec8; font-size: 1.6em; margin: 0px; padding: 0px;">
+                            Curso completo de Typescript y HTML 
+                        </h4>
+                        
+                        <p style="text-align: justify; color: #799ec8; margin: 0px; padding: 0px; margin-top: 20px; margin-bottom: 10px;">Curso de 15 horas</p>
+                        <button class="button-hover-educacion"><a target="_blank" href="https://www.udemy.com/certificate/UC-e816bc8c-5ce4-47ce-b84b-f8411c67355f/" style="text-decoration: none;">CERTIFICADO</a></button>
+
+                    </div>
+
+
+                    <div class="educacion-container-elementos">
+                        
+                        <h2 style="text-align: justify; color: #e76ff6; font-size: 2.5em; margin: 0px; padding: 0px;">
+                            Master en CSS: Responsive, SASS, Flexbox, Grid y Bootstrap
+
+
+
+                        </h2>
+                        <h4 style="text-align: justify; color: #799ec8; font-size: 1.6em; margin: 0px; padding: 0px;">
+                            Curso completo de CSS Avanzado 
+                        </h4>
+                        
+                        <p style="text-align: justify; color: #799ec8; margin: 0px; padding: 0px; margin-top: 20px; margin-bottom: 10px;">Curso de 21 horas</p>
+                        <button class="button-hover-educacion"><a target="_blank" href="https://www.udemy.com/certificate/UC-656e6484-ef26-4565-b143-03211f17f29a/" style="text-decoration: none;">CERTIFICADO</a></button>
+
+                    </div>
+
+
+
+
+
+                </div>
+            </div>
+        </section>
+
+        <section id="skills">
+            <div class="container">
+                <h2 style="color: #e76ff6;">SKILLS</h2>
+                <div class="skill-modulos-container">
+                    <div class="skill-modulos">
+                        <h4 style="color: #87b8e8; letter-spacing: 2px; margin: 0px;">LENGUAJES DE PROGRAMACION</h4>
+                        <p style="margin-bottom: 10px; margin-top: 5px; display: flex; align-items: center; flex-wrap: wrap;">
+                            <div style="display: flex; align-items: center; margin-bottom: 10px;">
+                                <i class="fab fa-js-square" style="background-color: #f0db4f; padding: 5px; margin-right: 10px;"></i>
+                                <span style="color: #fff; font-size: 1.2em; margin-right: 10px;">JavaScript - Avanzado</span> 
+                            </div>
+                            <div style="display: flex; align-items: center; margin-bottom: 10px;">
+                                <i class="fab fa-php" style="background-color: #8892bf; padding: 5px; margin-right: 10px;"></i>
+                                <span style="color: #fff; font-size: 1.2em; margin-right: 10px;">PHP - Intermedio</span> 
+                            </div>
+                            <div style="display: flex; align-items: center; margin-bottom: 10px;">
+                                <i class="fas fa-code" style="background-color: #1b1f23; padding: 5px; margin-right: 10px;"></i>
+                                <span style="color: #fff; font-size: 1.2em; margin-right: 10px;">C# - Avanzado</span> 
+                            </div>
+                            <div style="display: flex; align-items: center; margin-bottom: 10px;">
+                                <i class="fab fa-python" style="background-color: #306998; padding: 5px; margin-right: 10px;"></i>
+                                <span style="color: #fff; font-size: 1.2em; margin-right: 10px;">Python - Básico</span>
+                            </div>
+                            <div style="display: flex; align-items: center; margin-bottom: 10px;">
+                                <i class="fab fa-java" style="background-color: #007396; padding: 5px; margin-right: 10px;"></i>
+                                <span style="color: #fff; font-size: 1.2em; margin-right: 10px;">Java - Básico</span> 
+                            </div>                    
+                        </p>
+                    </div>
+                    <div class="skill-modulos">
+                        <h4 style="color: #87b8e8; letter-spacing: 2px; margin: 0px;">FRAMEWORKS Y LIBRERIAS</h4>
+                        <p style="margin-bottom: 10px; margin-top: 5px; display: flex; align-items: center; flex-wrap: wrap;">
+                            <div style="display: flex; align-items: center; margin-bottom: 10px;">
+                                <i class="fab fa-bootstrap" style="background-color: #563d7c; padding: 5px; margin-right: 10px;"></i>
+                                <span style="color: #fff; font-size: 1.2em; margin-right: 10px;">Bootstrap - Avanzado</span> 
+                            </div>
+                            <div style="display: flex; align-items: center; margin-bottom: 10px;">
+                                <i class="fab fa-react" style="background-color: #61dafb; padding: 5px; margin-right: 10px;"></i>
+                                <span style="color: #fff; font-size: 1.2em; margin-right: 10px;">React - Avanzado</span> 
+                            </div>
+                            <div style="display: flex; align-items: center; margin-bottom: 10px;">
+                                <i class="fab fa-angular" style="background-color: #dd0031; padding: 5px; margin-right: 10px;"></i>
+                                <span style="color: #fff; font-size: 1.2em; margin-right: 10px;">Angular - Intermedio</span> 
+                            </div>
+                            <div style="display: flex; align-items: center; margin-bottom: 10px;">
+                                <i class="fab fa-laravel" style="background-color: #f05340; padding: 5px; margin-right: 10px;"></i>
+                                <span style="color: #fff; font-size: 1.2em; margin-right: 10px;">Laravel - Avanzado</span> 
+                            </div>
+                            <div style="display: flex; align-items: center; margin-bottom: 10px;">
+                                <i class="fab fa-symfony" style="background-color: #000000; padding: 5px; margin-right: 10px;"></i>
+                                <span style="color: #fff; font-size: 1.2em; margin-right: 10px;">Symfony - Basico</span> 
+                            </div>
+                            <div style="display: flex; align-items: center; margin-bottom: 10px;">
+                                <i class="fab fa-node-js" style="background-color: #68a063; padding: 5px; margin-right: 10px;"></i>
+                                <span style="color: #fff; font-size: 1.2em; margin-right: 10px;">NodeJS Stack MERN - Avanzado</span>
+                            </div>
+                            <div style="display: flex; align-items: center; margin-bottom: 10px;">
+                                <i class="fab fa-windows" style="background-color: #0078d7; padding: 5px; margin-right: 10px;"></i>
+                                <span style="color: #fff; font-size: 1.2em; margin-right: 10px;">.NET Core/Framework - Avanzado</span> 
+                            </div>
+                        </p>
+                    </div>
+                    <div class="skill-modulos">
+                        <h4 style="color: #87b8e8; letter-spacing: 2px; margin: 0px;">BASE DE DATOS Y CONOCIMIENTOS GENERALES</h4>
+                        <p style="margin-bottom: 10px; margin-top: 5px; display: flex; align-items: center; flex-wrap: wrap;">
+                            <div style="display: flex; align-items: center; margin-bottom: 10px;">
+                                <i class="fab fa-microsoft" style="background-color: #0078d7; padding: 5px; margin-right: 10px;"></i>
+                                <span style="color: #fff; font-size: 1.2em; margin-right: 10px;">Azure - En Proceso</span> 
+                            </div>
+                            <div style="display: flex; align-items: center; margin-bottom: 10px;">
+                                <i class="fas fa-users" style="background-color: #4caf50; padding: 5px; margin-right: 10px;"></i>
+                                <span style="color: #fff; font-size: 1.2em; margin-right: 10px;">SCRUM - Intermedio</span> 
+                            </div>
+                            <div style="display: flex; align-items: center; margin-bottom: 10px;">
+                                <i class="fab fa-git" style="background-color: #f34f29; padding: 5px; margin-right: 10px;"></i>
+                                <i class="fab fa-github" style="background-color: #24292e; padding: 5px; margin-right: 10px;"></i>
+                                <span style="color: #fff; font-size: 1.2em; margin-right: 10px;">Git y GitHub - Intermedio</span> 
+                            </div>
+                            <div style="display: flex; align-items: center; margin-bottom: 10px;">
+                                <i class="fas fa-paint-brush" style="background-color: #f24e1e; padding: 5px; margin-right: 10px;"></i>
+                                <span style="color: #fff; font-size: 1.2em; margin-right: 10px;">Diseño IU - Intermedio</span> 
+                            </div>
+                            <div style="display: flex; align-items: center; margin-bottom: 10px;">
+                                <i class="fab fa-linux" style="background-color: #000000; padding: 5px; margin-right: 10px;"></i>
+                                <span style="color: #fff; font-size: 1.2em; margin-right: 10px;">Linux - Intermedio</span> 
+                            </div>
+                            <div style="display: flex; align-items: center; margin-bottom: 10px;">
+                                <i class="fas fa-stopwatch" style="background-color: #ffca28; padding: 5px; margin-right: 10px;"></i>
+                                <span style="color: #fff; font-size: 1.2em; margin-right: 10px;">JMeter - Basico</span> 
+                            </div>
+                            <div style="display: flex; align-items: center; margin-bottom: 10px;">
+                                <i class="fab fa-microsoft" style="background-color: #0078d7; padding: 5px; margin-right: 10px;"></i>
+                                <span style="color: #fff; font-size: 1.2em; margin-right: 10px;">Office 365 - Avanzado</span> 
+                            </div>
+                            <div style="display: flex; align-items: center; margin-bottom: 10px;">
+                                <i class="fas fa-database" style="background-color: #4db33d; padding: 5px; margin-right: 10px;"></i>
+                                <span style="color: #fff; font-size: 1.2em; margin-right: 10px;">MongoDB - Avanzado</span> 
+                            </div>
+                            <div style="display: flex; align-items: center; margin-bottom: 10px;">
+                                <i class="fas fa-database" style="background-color: #f29111; padding: 5px; margin-right: 10px;"></i>
+                                <span style="color: #fff; font-size: 1.2em; margin-right: 10px;">MySQL Server | Sql Server - Intermedio</span>
+                            </div>
+                        </p>
+                    </div> 
+                </div>               
+            </div>
+        </section>
+        
+        
+        
+        
+        
+        
+
+        <section id="contacto">
+            <div class="container container-contacto">
+                <h1 style="color:  #e76ff6;">CONTACTAME!</h1>
+                <div  class="contacto-item">
+                    <i class="fas fa-envelope icono"></i> 
+                    <p><a href="mailto:diegobefore99@hotmail.com" style="color: #ff5733;">diegobefore99@hotmail.com</a>.</p>
+                </div>
+                <div  class="contacto-item">
+                    <i class="fab fa-whatsapp icono"></i>
+                    <p>WhatsApp: +51 980611638</p>
+                </div>
+                <div class="contacto-item">
+                    <i class="fab fa-linkedin icono"></i>
+                    <p>LinkedIn: <a href="https://www.linkedin.com/in/diego-moises-carpio-andia-125a0b234/" style="color: #8ce202; text-decoration: none;">https://www.linkedin.com/in/diego-moises-carpio-andia-125a0b234/</a></p>
+                </div>
+                <div class="contacto-item">
+                    <i class="fab fa-github icono"></i>
+                    <p>GitHub: <a href="https://github.com/Diego-Carpio-Andia" style="color: #8ce202; text-decoration: none;">https://github.com/Diego-Carpio-Andia</a></p>
+                </div>
+                
+
+                <p class="texto-contactame">ESTA PAGINA FUE DESARROLLADA</p>
+
+                <div class="seccion-botones-contacto">
+                    <div class="tecnologia javascript">
+                        <i class="fab fa-js-square icono"></i>
+                        <span>JavaScript</span>
+                    </div>
+                    <div class="tecnologia html">
+                        <i class="fab fa-html5 icono"></i>
+                        <span>HTML</span>
+                    </div>
+                    <div class="tecnologia css">
+                        <i class="fab fa-css3-alt icono"></i>
+                        <span>CSS</span>
+                    </div>
+                    <div class="tecnologia bootstrap-icono">
+                        <i class="fab fa-bootstrap"></i>
+                        <span>Bootstrap</span>
+                    </div>
+                                        
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/js/all.min.js"></script> 
+    <script>
+      
+        var menuLinks = document.querySelectorAll('.sidebar nav a');
+
+      
+        menuLinks.forEach(function(link) {
+            
+            link.addEventListener('click', function() {
+               
+                menuLinks.forEach(function(item) {
+                    item.classList.remove('active');
+                });
+               
+                link.classList.add('active');
+            });
+        });
+
+
+        function openModal(modalId) {
+            document.getElementById(modalId).style.display = "block";
+        }
+
+        function closeModal(modalId) {
+            document.getElementById(modalId).style.display = "none";
+        }
+
+
+        document.addEventListener("DOMContentLoaded", function() {
+            function escribirTexto() {
+            var textoCompleto = "EL CONOCIMIENTO TIENE UN COMIENZO PERO NO UN FINAL";
+            var textoEscrito = "";
+            var index = 0;
+            var intervalo = setInterval(function() {
+                textoEscrito += textoCompleto[index];
+                document.getElementById("textoEscrito").innerText = textoEscrito;
+                index++;
+                    if (index >= textoCompleto.length) {
+                        clearInterval(intervalo);
+                        // Esperar 50 segundos antes de ejecutar nuevamente la función
+                        setTimeout(escribirTexto, textoCompleto.length * 10);
+                    }
+                }, 100);
+            }
+
+        // Llamar a la función por primera vez
+        escribirTexto();
+            
+        });
+
+    </script>
+</body>
+</html>
