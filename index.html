@@ -7,18 +7,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"> 
     <link rel="icon" href="icono.ico">
     <style>
-        @media screen and (max-width: 768px) {
-            /* Estilos para pantallas más pequeñas, como tabletas */
-            .sidebar {
-                width: 100%;
-                height: auto;
-                position: static;
-            }
-            .contenido {
-                width: 100%;
-                margin-left: 0;
-            }
-        }
+        
 
         body {
             font-family: 'Hack', monospace;
@@ -305,11 +294,23 @@
         }
 
         #educacion{
-            margin-bottom: 600px;
+            margin-bottom: 1200px;
         }
         
 
 
+        @media screen and (max-width: 768px) {
+            /* Estilos para pantallas más pequeñas, como tabletas */
+            .sidebar {
+                display: none;
+                height: auto;
+                position: static;
+            }
+            .contenido {
+                width: 100%;
+                margin-left: 0;
+            }
+        }
     </style>
 </head>
 <body>
